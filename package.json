@@ -1,6 +1,7 @@
 {
   "name": "dom-helpers",
   "version": "0.0.1",
+  "description": "Small Helper Library to manipulate DOM-Elements",
   "main": "dist/dom.cjs.js",
   "module": "dist/dom.esm.js",
   "browser": "dist/dom.umd.js",
@@ -13,9 +14,7 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "test": "node test/test.js",
-    "pretest": "npm run build"
+    "dev": "rollup -c -w"
   },
   "files": [
     "dist"
