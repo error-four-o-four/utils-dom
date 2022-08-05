@@ -1,2 +1,0 @@
-const prefersDarkColorScheme = () => window && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-const prefersLightColorScheme = () => window && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;

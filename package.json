@@ -1,23 +1,24 @@
 {
-  "name": "dom-helpers",
-  "version": "0.0.1",
-  "description": "Small Helper Library to manipulate DOM-Elements",
-  "main": "dist/dom.cjs.js",
-  "module": "dist/dom.esm.js",
-  "browser": "dist/dom.umd.js",
-  "dependencies": {},
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^11.0.1",
-    "@rollup/plugin-node-resolve": "^7.0.0",
-    "rollup-plugin-minify": "^1.0.3",
-    "rollup": "^1.29.0"
+  "name": "dom",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "files": ["dist"],
+  "main": "./dist/dom.umd.cjs",
+  "module": "./dist/dom.js",
+  "exports": {
+    ".": {
+      "import": "./dist/dom.js",
+      "require": "./dist/dom.umd.cjs"
+    }
   },
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
-  "files": [
-    "dist"
-  ],
-  "license": "MIT"
+  "devDependencies": {
+    "typescript": "^4.6.4",
+    "vite": "^3.0.0"
+  }
 }
