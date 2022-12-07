@@ -24,3 +24,5 @@
 	* inlineStyle
 	* removeStyles
 * animateTo
+
+[package development with vite](https://dev.to/brifiction/npm-package-development-with-vite-4jc6)

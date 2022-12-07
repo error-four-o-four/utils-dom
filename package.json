@@ -3,15 +3,18 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "files": ["dist"],
-  "main": "./dist/dom.umd.cjs",
-  "module": "./dist/dom.js",
   "exports": {
     ".": {
       "import": "./dist/dom.js",
       "require": "./dist/dom.umd.cjs"
     }
   },
+  "main": "./dist/dom.umd.cjs",
+  "module": "./dist/dom.js",
+  "typings": "./dist/main.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -20,5 +23,12 @@
   "devDependencies": {
     "typescript": "^4.6.4",
     "vite": "^3.0.0"
+  },
+  "dependencies": {
+    "@rollup/plugin-typescript": "^10.0.1",
+    "@types/node": "^18.11.11",
+    "prettier": "^2.8.1",
+    "rollup-plugin-typescript-paths": "^1.4.0",
+    "tslib": "^2.4.1"
   }
 }
