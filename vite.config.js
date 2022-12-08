@@ -21,6 +21,7 @@ export default defineConfig({
 		manifest: true,
     minify: true,
     reportCompressedSize: true,
+    outDir: 'lib',
     lib: {
       entry: path.resolve(__dirname, "src/main.ts"),
 			name: 'dom',
@@ -28,15 +29,16 @@ export default defineConfig({
       formats: ["es", "cjs"],
     },
     rollupOptions: {
-      external: [],
+      // external: [],
       plugins: [
         typescriptPaths({
           preserveExtensions: true,
         }),
         typescript({
+          // tsconfig: 'tsconfig.json',
           sourceMap: false,
           declaration: true,
-          outDir: "dist",
+          outDir: "lib",
         }),
       ],
     }

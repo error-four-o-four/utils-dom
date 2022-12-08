@@ -25,5 +25,5 @@ export const get = (arg: string): never | HTMLElement | HTMLElement[] => {
 		return elts as HTMLElement[];
 	}
 
-	throw new Error('Invalid argument')
+	throw new Error(`Invalid argument - the HTMLElement '${arg}' does not exist.`)
 }

@@ -5,6 +5,10 @@
  * @returns
  */
 export const append = (parent: HTMLElement, ...children: HTMLElement[]) => {
+	if (children.length === 1) {
+		return parent.appendChild(children[0]);
+	}
+
 	return children.reduce((all: HTMLElement[], child: HTMLElement) => {
 		parent.appendChild(child);
 		return [...all, child];
@@ -70,10 +74,12 @@ const removeElement = (arg: string | HTMLElement): void => {
 }
 
 /**
- *
+ *	remove multiple elements
  * @param {string[] | HTMLElement[] | [HTMLElement | HTMLElement[]]} args
  */
 export const remove = (...args: string[] | HTMLElement[] | [HTMLElement | HTMLElement[]]): void => {
+	/**@todo guard clause single argument => performance */
+
 	const values = [];
 
 	for (const arg of args) (Array.isArray(arg)) ? values.push(...arg) : values.push(arg);

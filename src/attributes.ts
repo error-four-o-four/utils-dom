@@ -44,7 +44,11 @@ export const removeClass = (elt: HTMLElement, ...args: string[]): void => {
 	for (const arg of args) call(rem, elt, arg);
 }
 
-
+/**
+ *
+ * @param elt
+ * @param args
+ */
 export const toggleClass = (elt: HTMLElement, ...args: string[]): void => {
 	for (const arg of args) elt.classList.toggle(arg);
 }

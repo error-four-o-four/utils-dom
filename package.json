@@ -5,15 +5,15 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/dom.js",
-      "require": "./dist/dom.umd.cjs"
+      "import": "./lib/dom.js",
+      "require": "./lib/dom.umd.cjs"
     }
   },
-  "main": "./dist/dom.umd.cjs",
-  "module": "./dist/dom.js",
-  "typings": "./dist/main.d.ts",
+  "main": "./lib/dom.umd.cjs",
+  "module": "./lib/dom.js",
+  "typings": "./lib/main.d.ts",
   "files": [
-    "dist"
+    "lib"
   ],
   "scripts": {
     "dev": "vite",
