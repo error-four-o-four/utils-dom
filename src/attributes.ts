@@ -4,7 +4,8 @@
  * @param {string} arg
  * @returns
  */
-export const hasClass = (elt: HTMLElement, arg: string) => elt.classList.contains(arg);
+export const hasClass = (elt: HTMLElement, arg: string) =>
+  elt.classList.contains(arg);
 
 /**@todo */
 
@@ -15,12 +16,12 @@ export const hasClass = (elt: HTMLElement, arg: string) => elt.classList.contain
 /////////////////////////////////////////////////////////////////////////////////////
 
 const call = (fn: Function, elt: HTMLElement, ...args: string[]) => {
-	for (const arg of args) fn(elt, arg)
-}
+  for (const arg of args) fn(elt, arg);
+};
 
 const add = (elt: HTMLElement, arg: string) => {
-	if (!hasClass(elt, arg)) elt.classList.add(arg);
-}
+  if (!hasClass(elt, arg)) elt.classList.add(arg);
+};
 
 /**
  *
@@ -28,12 +29,12 @@ const add = (elt: HTMLElement, arg: string) => {
  * @param args
  */
 export const addClass = (elt: HTMLElement, ...args: string[]): void => {
-	for (const arg of args) call(add, elt, arg);
-}
+  for (const arg of args) call(add, elt, arg);
+};
 
 const rem = (elt: HTMLElement, arg: string) => {
-	if (hasClass(elt, arg)) elt.classList.remove(arg);
-}
+  if (hasClass(elt, arg)) elt.classList.remove(arg);
+};
 
 /**
  *
@@ -41,8 +42,8 @@ const rem = (elt: HTMLElement, arg: string) => {
  * @param args
  */
 export const removeClass = (elt: HTMLElement, ...args: string[]): void => {
-	for (const arg of args) call(rem, elt, arg);
-}
+  for (const arg of args) call(rem, elt, arg);
+};
 
 /**
  *
@@ -50,5 +51,5 @@ export const removeClass = (elt: HTMLElement, ...args: string[]): void => {
  * @param args
  */
 export const toggleClass = (elt: HTMLElement, ...args: string[]): void => {
-	for (const arg of args) elt.classList.toggle(arg);
-}
+  for (const arg of args) elt.classList.toggle(arg);
+};
