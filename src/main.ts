@@ -1,30 +1,12 @@
-// USER
-import {
-  isMobileDevice,
-  supportsTouchEvents,
-  prefersDarkColorScheme,
-  prefersLightColorScheme,
-  prefersReducedMotion,
-} from "./environment";
-
 import * as reading from "./reading";
 import * as creating from "./creating";
 import * as attributes from "./attributes";
 
-export {
-  isMobileDevice,
-  supportsTouchEvents,
-  prefersDarkColorScheme,
-  prefersLightColorScheme,
-  prefersReducedMotion,
-};
+// USER
+export * from "./environment";
 
-export default {
-  isMobileDevice,
-  supportsTouchEvents,
-  prefersDarkColorScheme,
-  prefersLightColorScheme,
-  prefersReducedMotion,
+// DOM
+export const dom = {
   ...reading,
   ...creating,
   ...attributes,

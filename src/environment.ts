@@ -4,6 +4,8 @@ export const isMobileDevice = () => {
   );
 };
 
+export const supportsTouchEvents = () => window && "ontouchstart" in window;
+
 export const prefersDarkColorScheme = () =>
   window &&
   window.matchMedia &&
@@ -18,5 +20,3 @@ export const prefersReducedMotion = () =>
   window &&
   window.matchMedia &&
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-export const supportsTouchEvents = () => window && "ontouchstart" in window;

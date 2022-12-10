@@ -36,7 +36,6 @@ export default defineConfig({
         }),
         typescript({
           // tsconfig: 'tsconfig.json',
-          sourceMap: false,
           declaration: true,
           outDir: "lib",
         }),

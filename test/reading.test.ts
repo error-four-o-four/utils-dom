@@ -2,7 +2,7 @@
  * @vitest-environment jsdom
  */
 
-import { describe, expect, test } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { toString, get } from '../src/reading';
 
 document.body.innerHTML = `
@@ -21,7 +21,7 @@ document.body.innerHTML = `
 `;
 
 describe('dom.toString()', () => {
-	test('given an HTMLElement', () => {
+	it('returns a string with tag name, id and classes from a HTMLElement', () => {
 		const elt = document.getElementById('my-div') as HTMLElement;
 		const result = toString(elt);
 		expect(result)
@@ -30,29 +30,29 @@ describe('dom.toString()', () => {
 })
 
 describe('dom.get()', () => {
-	test('throw error', () => {
+	it('throws an error when given an invalid argument', () => {
 		const arg = '#div'
 		const exec = () => get(arg);
 		expect(exec).toThrowError(arg);
 	})
 
-	test('get a single element by tag', () => {
+	it('returns a single element by tag', () => {
 		const result = get('div');
 		expect(result).toBeInstanceOf(HTMLElement);
 	})
 
-	test('get a single element by id', () => {
+	it('returns a single element by id', () => {
 		const result = get('#my-div');
 		expect(result).toBeInstanceOf(HTMLElement);
 	});
 
-	test('get multiple elements by tag as an array', () => {
+	it('returns multiple elements by tag as an array', () => {
 		const result = get('span');
 		expect(result).toBeInstanceOf(Array)
 		expect(result).toHaveLength(10);
 	})
 
-	test('get multiple elements by class name as an array', () => {
+	it('returns multiple elements by class name as an array', () => {
 		const result = get('.greater-than');
 		expect(result).toBeInstanceOf(Array)
 		expect(result).toHaveLength(5);

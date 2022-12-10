@@ -21,7 +21,7 @@ const validateElement = (arg: string): never | HTMLElement => {
   let elt: null | HTMLElement;
 
   elt = document.createElement(arg);
-  if (!elt) throw new Error("not a valid argument");
+  if (elt instanceof HTMLUnknownElement) throw new DOMException("not a valid argument");
 
   return elt as HTMLElement;
 };
@@ -69,11 +69,21 @@ const removeElement = (arg: string | HTMLElement): void => {
   let elt: HTMLElement | NodeList =
     arg instanceof HTMLElement ? arg : document.querySelectorAll(arg);
 
+  if (elt instanceof NodeList && elt.length === 0) {
+    console.warn(`'${arg}' is not in DOM tree.`);
+  }
+
   if (elt instanceof NodeList) {
     for (const node of elt) node.parentElement?.removeChild(node);
     return;
   }
-  elt.parentElement?.removeChild(elt);
+
+  if (elt.parentElement === null) {
+    console.warn(`'${elt}' is not in DOM tree.`);
+    return;
+  }
+
+  elt.parentElement.removeChild(elt);
 };
 
 /**
