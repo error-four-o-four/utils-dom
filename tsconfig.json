@@ -15,7 +15,7 @@
     "noEmit": true,
 
     // "declaration": true,
-    // "declarationDir": ".lib/types",
+    // "emitDeclarationOnly": true,
     "sourceMap": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,

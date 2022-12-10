@@ -29,14 +29,14 @@ export default defineConfig({
       formats: ["es", "cjs"],
     },
     rollupOptions: {
-      // external: [],
       plugins: [
         typescriptPaths({
           preserveExtensions: true,
         }),
         typescript({
-          // tsconfig: 'tsconfig.json',
+          tsconfig: 'tsconfig.json',
           declaration: true,
+          declarationDir: path.resolve(__dirname, "lib/types"),
           outDir: "lib",
         }),
       ],

@@ -64,9 +64,7 @@ import dom from 'dom';
 
 ### Fix
 
-- declarationDir not working
-- create packages
-- build documentation
+- [ ] build documentation
 
 <br>
 
