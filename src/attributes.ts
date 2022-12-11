@@ -4,7 +4,7 @@
  * @param {string} arg
  * @returns
  */
-export const hasClass = (elt: HTMLElement, arg: string) =>
+export const hasClass = (elt: HTMLElement, arg: string): boolean =>
   elt.classList.contains(arg);
 
 /**@todo */
@@ -15,11 +15,11 @@ export const hasClass = (elt: HTMLElement, arg: string) =>
 
 /////////////////////////////////////////////////////////////////////////////////////
 
-const call = (fn: Function, elt: HTMLElement, ...args: string[]) => {
+const call = (fn: Function, elt: HTMLElement, ...args: string[]): void => {
   for (const arg of args) fn(elt, arg);
 };
 
-const add = (elt: HTMLElement, arg: string) => {
+const add = (elt: HTMLElement, arg: string): void => {
   if (!hasClass(elt, arg)) elt.classList.add(arg);
 };
 
@@ -32,7 +32,7 @@ export const addClass = (elt: HTMLElement, ...args: string[]): void => {
   for (const arg of args) call(add, elt, arg);
 };
 
-const rem = (elt: HTMLElement, arg: string) => {
+const rem = (elt: HTMLElement, arg: string): void => {
   if (hasClass(elt, arg)) elt.classList.remove(arg);
 };
 

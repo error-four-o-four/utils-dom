@@ -4,7 +4,7 @@
  * @param  {...HTMLELement} children
  * @returns
  */
-export const append = (parent: HTMLElement, ...children: HTMLElement[]) => {
+export const append = (parent: HTMLElement, ...children: HTMLElement[]): HTMLElement | HTMLElement[] => {
   if (children.length === 1) {
     return parent.appendChild(children[0]);
   }
@@ -57,7 +57,7 @@ const createElement = (...args: string[]): never | HTMLElement => {
  * @param {string[]} args
  * @returns
  */
-export const create = (parent: string | HTMLElement, ...args: string[]) => {
+export const create = (parent: string | HTMLElement, ...args: string[]): HTMLElement | HTMLElement[] => {
   return parent instanceof HTMLElement
     ? append(parent, createElement(...args))
     : createElement(parent, ...args);

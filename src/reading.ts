@@ -4,8 +4,7 @@
  * @returns {string}
  */
 export const toString = (elt: HTMLElement): string =>
-  `${elt.localName}${elt?.id !== "" ? "#" + elt?.id : ""}${
-    elt.classList?.length > 0 ? "." + Array.from(elt.classList).join(".") : ""
+  `${elt.localName}${elt?.id !== "" ? "#" + elt?.id : ""}${elt.classList?.length > 0 ? "." + Array.from(elt.classList).join(".") : ""
   }`;
 
 /**
@@ -28,3 +27,8 @@ export const get = (arg: string): never | HTMLElement | HTMLElement[] => {
     `Invalid argument - the HTMLElement '${arg}' does not exist.`
   );
 };
+
+
+
+
+

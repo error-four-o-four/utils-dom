@@ -29,6 +29,9 @@ export default defineConfig({
       formats: ["es", "cjs"],
     },
     rollupOptions: {
+      output: {
+        sourcemapExcludeSources: true,
+      },
       plugins: [
         typescriptPaths({
           preserveExtensions: true,
@@ -38,7 +41,7 @@ export default defineConfig({
           declaration: true,
           declarationDir: path.resolve(__dirname, "lib/types"),
           outDir: "lib",
-        }),
+        })
       ],
     },
   },

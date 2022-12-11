@@ -14,12 +14,14 @@
     "isolatedModules": true,
     "noEmit": true,
 
-    // "declaration": true,
-    // "emitDeclarationOnly": true,
+    "declaration": true,
     "sourceMap": false,
+    "importHelpers": true,
+
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
+
     "baseUrl": "./",
     "paths": {
       "~/*": ["src/*"]
